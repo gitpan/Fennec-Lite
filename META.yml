@@ -13,7 +13,7 @@ name: Fennec-Lite
 provides:
   Fennec::Lite:
     file: lib/Fennec/Lite.pm
-    version: 0.001
+    version: 0.002
 requires:
   List::Util: 0
   Test::Builder: 0
@@ -24,4 +24,4 @@ resources:
   homepage: http://open-exodus.net/projects/Fennec-Lite
   license: http://dev.perl.org/licenses/
   repository: http://github.com/exodist/Fennec-Lite
-version: 0.001
+version: 0.002

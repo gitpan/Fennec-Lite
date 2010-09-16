@@ -8,7 +8,7 @@ use Carp qw/ croak /;
 use List::Util qw/ shuffle /;
 use B;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 our @USE_IF_PRESENT = qw/
     Test::Warn
@@ -21,8 +21,6 @@ our @EXPORT = qw/
     fennec_accessors
 /;
 
-our $SINGLETON;
-
 fennec_accessors(qw/
     _tests
     load
@@ -30,6 +28,9 @@ fennec_accessors(qw/
     seed
     random
 /);
+
+our $SINGLETON;
+sub get { $SINGLETON }
 
 sub import {
     my $class = shift;
@@ -81,11 +82,7 @@ sub import {
     }
 
     $SINGLETON ||= $class->_new( %specs, created_by => $caller );
-
-    1;
 }
-
-sub get { $SINGLETON }
 
 sub _new {
     my $class = shift;
@@ -197,7 +194,6 @@ sub fennec_accessors {
 
 1;
 
-__END__
 
 =head1 NAME
 
@@ -210,18 +206,18 @@ large project, and has not yet been fully split into component projects.
 Fennec::Lite takes a minimalist approach to do for Fennec what Mouse does for
 Moose.
 
-Fennec::Lite is a single module file with no non-core dependancies. It can
+Fennec::Lite is a single module file with no non-core dependencies. It can
 easily be used by any project, either directly, or by copying it into your
-project. The file itself is less than 200 lines of cade at the time of this
+project. The file itself is less than 200 lines of code at the time of this
 writing, that includes whitespace.
 
 This module does not cover any of the more advanced features such as result
 capturing or SPEC workflows. This module only covers test grouping and group
-randomisation. You can also use the FENNEC_ITEM variable with a group name or
+randomization. You can also use the FENNEC_ITEM variable with a group name or
 line number to run a specific test group only. Test::Builder is used under the
 hood for TAP output.
 
-=head1 SYNOPSYS
+=head1 SYNOPSIS
 
 =head2 SIMPLE
 
@@ -313,12 +309,12 @@ True by default. When true test groups will be run in random order.
 
 =item testing => $CLASS_NAME
 
-Declare what class you ore testing. Prosvides $CLASS and CLASS(), both of which
-are simply the name of the class bieng tested.
+Declare what class you ore testing. Provides $CLASS and CLASS(), both of which
+are simply the name of the class being tested.
 
 =item alias => @PACKAGES
 
-Create alias functions yor the given package. An alias is a function that
+Create alias functions your the given package. An alias is a function that
 returns the package name. The aliases will be named after the last part of the
 package name.
 
@@ -332,9 +328,9 @@ return.
 =head1 RUNNING IN RANDOM ORDER
 
 By default test groups will be run in a random order. The random seed is the
-corrunt date (YYYYMMDD). This is used so that the order does not change on the
+current date (YYYYMMDD). This is used so that the order does not change on the
 day you are editing your code. However the ardor will change daily allowing for
-automated testing to find order dependant failures.
+automated testing to find order dependent failures.
 
 You can manually set the random seed to reproduce a failure. The FENNEC_SEED
 environment variable will be used as the seed when it is present.
@@ -388,12 +384,12 @@ do it manually or use L<Moose>.
 =head1 FENNEC PROJECT
 
 This module is part of the Fennec project. See L<Fennec> for more details.
-Fennec is a project to develop an extendable and powerful testing framework.
+Fennec is a project to develop an extensible and powerful testing framework.
 Together the tools that make up the Fennec framework provide a potent testing
 environment.
 
 The tools provided by Fennec are also useful on their own. Sometimes a tool
-created for Fennec is useful outside the greator framework. Such tools are
+created for Fennec is useful outside the greater framework. Such tools are
 turned into their own projects. This is one such project.
 
 =over 2
@@ -412,7 +408,7 @@ Chad Granum L<exodist7@gmail.com>
 
 Copyright (C) 2010 Chad Granum
 
-Fennec-Lite is free software; Standard perl licence.
+Fennec-Lite is free software; Standard perl license.
 
 Fennec-Lite is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS

@@ -7,18 +7,18 @@ DESCRIPTION
     projects. Fennec::Lite takes a minimalist approach to do for Fennec what
     Mouse does for Moose.
 
-    Fennec::Lite is a single module file with no non-core dependancies. It
+    Fennec::Lite is a single module file with no non-core dependencies. It
     can easily be used by any project, either directly, or by copying it
-    into your project. The file itself is less than 200 lines of cade at the
+    into your project. The file itself is less than 200 lines of code at the
     time of this writing, that includes whitespace.
 
     This module does not cover any of the more advanced features such as
     result capturing or SPEC workflows. This module only covers test
-    grouping and group randomisation. You can also use the FENNEC_ITEM
+    grouping and group randomization. You can also use the FENNEC_ITEM
     variable with a group name or line number to run a specific test group
     only. Test::Builder is used under the hood for TAP output.
 
-SYNOPSYS
+SYNOPSIS
   SIMPLE
         #!/usr/bin/perl
         use strict;
@@ -100,13 +100,13 @@ IMPORT ARGUMENTS
         True by default. When true test groups will be run in random order.
 
     testing => $CLASS_NAME
-        Declare what class you ore testing. Prosvides $CLASS and CLASS(),
-        both of which are simply the name of the class bieng tested.
+        Declare what class you ore testing. Provides $CLASS and CLASS(),
+        both of which are simply the name of the class being tested.
 
     alias => @PACKAGES
-        Create alias functions yor the given package. An alias is a function
-        that returns the package name. The aliases will be named after the
-        last part of the package name.
+        Create alias functions your the given package. An alias is a
+        function that returns the package name. The aliases will be named
+        after the last part of the package name.
 
     alias_to => { $ALIAS => $PACKAGE, ... }
         Define aliases, keys are alias names, values are tho package names
@@ -114,9 +114,9 @@ IMPORT ARGUMENTS
 
 RUNNING IN RANDOM ORDER
     By default test groups will be run in a random order. The random seed is
-    the corrunt date (YYYYMMDD). This is used so that the order does not
+    the current date (YYYYMMDD). This is used so that the order does not
     change on the day you are editing your code. However the ardor will
-    change daily allowing for automated testing to find order dependant
+    change daily allowing for automated testing to find order dependent
     failures.
 
     You can manually set the random seed to reproduce a failure. The
@@ -160,12 +160,12 @@ EXPORTED FUNCTIONS
 
 FENNEC PROJECT
     This module is part of the Fennec project. See Fennec for more details.
-    Fennec is a project to develop an extendable and powerful testing
+    Fennec is a project to develop an extensible and powerful testing
     framework. Together the tools that make up the Fennec framework provide
     a potent testing environment.
 
     The tools provided by Fennec are also useful on their own. Sometimes a
-    tool created for Fennec is useful outside the greator framework. Such
+    tool created for Fennec is useful outside the greater framework. Such
     tools are turned into their own projects. This is one such project.
 
     Fennec - The core framework
@@ -177,7 +177,7 @@ AUTHORS
 COPYRIGHT
     Copyright (C) 2010 Chad Granum
 
-    Fennec-Lite is free software; Standard perl licence.
+    Fennec-Lite is free software; Standard perl license.
 
     Fennec-Lite is distributed in the hope that it will be useful, but
     WITHOUT ANY WARRANTY; without even the implied warranty of
